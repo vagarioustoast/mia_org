@@ -9,10 +9,11 @@ export default class Header extends Component {
     return (
       <div>
         <h1>Marxist Internet Archive</h1>
-        <a>Sign in</a>
-        <a>Register</a>
+        <a href="#">Sign in</a>
+        <a href="#">Register</a>
         <nav>
-          <ul className="nav-links">
+          <hr />
+          <ul>
             <li>First International</li>
             <li>Western Marxism</li>
             <li>Trotskyists</li>

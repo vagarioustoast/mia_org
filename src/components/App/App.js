@@ -10,6 +10,11 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <div className="body">
+          <Switch>
+            <Route exact path="/" render={() => {}} />
+          </Switch>
+        </div>
       </div>
     );
   }
