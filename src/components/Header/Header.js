@@ -12,7 +12,7 @@ export default class Header extends Component {
         <a>Sign in</a>
         <a>Register</a>
         <nav>
-          <ul>
+          <ul className="nav-links">
             <li>First International</li>
             <li>Western Marxism</li>
             <li>Trotskyists</li>
@@ -23,6 +23,7 @@ export default class Header extends Component {
             <li>Philosophy</li>
             <li>Ethics</li>
           </ul>
+          <hr />
         </nav>
       </div>
     );

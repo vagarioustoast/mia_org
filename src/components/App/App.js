@@ -1,11 +1,15 @@
 import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+
+import axios from "axios";
+import Header from "../Header/Header";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>Marxists Internet Archive</h1>
+        <Header />
       </div>
     );
   }
