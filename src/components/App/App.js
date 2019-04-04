@@ -5,6 +5,7 @@ import axios from "axios";
 import Header from "../Header/Header";
 import FrontPage from "../FrontPage/FrontPage";
 import ProfileContainer from "../Profile/ProfileContainer";
+import Category from "../Category/Category";
 import Footer from "../Footer/Footer";
 import "./App.css";
 
@@ -32,6 +33,16 @@ class App extends Component {
                 return (
                   <div>
                     <ProfileContainer />
+                  </div>
+                );
+              }}
+            />
+            <Route
+              path="/articles/category"
+              render={() => {
+                return (
+                  <div>
+                    <Category />
                   </div>
                 );
               }}
