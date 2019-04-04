@@ -23,7 +23,7 @@ export default class Header extends Component {
         <nav className="bt bb tc mw8 center mt2">
           <a
             href="/articles/category/First_International"
-            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+            className="f7 f5-l link bg-animate black-80 dib pa2 ph4-l"
           >
             First International
           </a>

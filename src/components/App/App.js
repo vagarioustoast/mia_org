@@ -12,6 +12,16 @@ import Footer from "../Footer/Footer";
 import "./App.css";
 
 class App extends Component {
+  state = {
+    articles: []
+  };
+
+  componentDidMount() {
+    axios.get("http://localhost:3001/articles/all").then(res => {
+      console.log(res);
+    });
+  }
+
   render() {
     return (
       <div>
