@@ -4,6 +4,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header/Header";
 import FrontPage from "../FrontPage/FrontPage";
+import SignIn from "../Header/SignIn";
+import SignUp from "../Header/SignUp";
 import ProfileContainer from "../Profile/ProfileContainer";
 import Category from "../Category/Category";
 import Footer from "../Footer/Footer";
@@ -33,6 +35,16 @@ class App extends Component {
                 return (
                   <div>
                     <ProfileContainer />
+                  </div>
+                );
+              }}
+            />
+            <Route
+              path="/signin"
+              render={() => {
+                return (
+                  <div>
+                    <SignIn />
                   </div>
                 );
               }}

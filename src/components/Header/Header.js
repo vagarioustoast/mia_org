@@ -13,8 +13,8 @@ export default class Header extends Component {
         <h1>
           <a href="/">Marxist Internet Archive</a>
         </h1>
-        <a href="#">Sign in</a>
-        <a href="#">Register</a>
+        <a href="/signin">Sign in</a>
+        <a href="/signup">Register</a>
         <nav>
           <hr />
           <ul>
