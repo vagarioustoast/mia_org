@@ -11,46 +11,78 @@ export default class Header extends Component {
     return (
       <div>
         <h1>
-          <a href="/">Marxist Internet Archive</a>
+          <a
+            href="/"
+            className="mt2 mb0 baskerville i fw1 f1 no-underline black-80"
+          >
+            Marxist Internet Archive
+          </a>
         </h1>
         <a href="/signin">Sign in</a>
 
-        <nav>
-          <hr />
-          <ul>
-            <li>
-              <a href="/articles/category/First_International">
-                First International
-              </a>
-            </li>
-            <li>
-              <a href="/articles/category/Western_Marxism">Western Marxism</a>
-            </li>
-            <li>
-              <a href="/articles/category/Trotskyists">Trotskyists</a>
-            </li>
-            <li>
-              <a href="/articles/category/Left_Communism">Left Communism</a>
-            </li>
-            <li>
-              <a href="/articles/category/African_Liberation">
-                African Liberation
-              </a>
-            </li>
-            <li>
-              <a href="/articles/category/Black_Liberation">Black Liberation</a>
-            </li>
-            <li>
-              <a href="/articles/category/Feminists">Feminists</a>
-            </li>
-            <li>
-              <a href="/articles/category/Philosophy">Philosophy</a>
-            </li>
-            <li>
-              <a href="/articles/category/Ethics">Ethics</a>
-            </li>
-          </ul>
-          <hr />
+        <nav className="bt bb tc mw8 center mt2">
+          <a
+            href="/articles/category/First_International"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            First International
+          </a>
+
+          <a
+            href="/articles/category/Western_Marxism"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            Western Marxism
+          </a>
+
+          <a
+            href="/articles/category/Trotskyists"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            Trotskyists
+          </a>
+
+          <a
+            href="/articles/category/Left_Communism"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            Left Communism
+          </a>
+
+          <a
+            href="/articles/category/African_Liberation"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            African Liberation
+          </a>
+
+          <a
+            href="/articles/category/Black_Liberation"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            Black Liberation
+          </a>
+
+          <a
+            href="/articles/category/Feminists"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            Feminists
+          </a>
+
+          <a
+            href="/articles/category/Philosophy"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            Philosophy
+          </a>
+
+          <a
+            href="/articles/category/Ethics"
+            className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+          >
+            Ethics
+          </a>
         </nav>
       </div>
     );

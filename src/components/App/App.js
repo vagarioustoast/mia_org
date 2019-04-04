@@ -7,7 +7,7 @@ import FrontPage from "../FrontPage/FrontPage";
 import SignIn from "../Header/SignIn";
 import SignUp from "../Header/SignUp";
 import ProfileContainer from "../Profile/ProfileContainer";
-import Category from "../Category/Category";
+import CategoryContainer from "../Category/CategoryContainer";
 import Footer from "../Footer/Footer";
 import "./App.css";
 
@@ -64,7 +64,7 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <Category />
+                    <CategoryContainer />
                   </div>
                 );
               }}
