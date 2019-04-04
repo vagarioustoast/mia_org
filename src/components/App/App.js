@@ -50,6 +50,16 @@ class App extends Component {
               }}
             />
             <Route
+              path="/signup"
+              render={() => {
+                return (
+                  <div>
+                    <SignIn />
+                  </div>
+                );
+              }}
+            />
+            <Route
               path="/articles/category"
               render={() => {
                 return (

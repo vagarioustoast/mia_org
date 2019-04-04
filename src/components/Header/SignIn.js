@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 export default class SignIn extends Component {
   render() {
@@ -43,7 +42,7 @@ export default class SignIn extends Component {
               />
             </div>
             <div className="lh-copy mt3">
-              <a href="#0" className="f6 link dim black db">
+              <a href="/signup" className="f6 link dim black db">
                 Sign up
               </a>
               <a href="#0" className="f6 link dim black db">
