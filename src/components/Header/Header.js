@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
@@ -9,7 +10,9 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <h1>Marxist Internet Archive</h1>
+        <h1>
+          <a href="/">Marxist Internet Archive</a>
+        </h1>
         <a href="#">Sign in</a>
         <a href="#">Register</a>
         <nav>
