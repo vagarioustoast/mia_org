@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import axios from "axios";
 import Header from "../Header/Header";
-import FrontPage from "../FrontPage/FrontPage";
+import FrontPageContainer from "../FrontPage/FrontPageContainer";
 import SignIn from "../Header/SignIn";
 import SignUp from "../Header/SignUp";
 import ProfileContainer from "../Profile/ProfileContainer";
@@ -13,15 +13,29 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    articles: []
+    user: "",
+    loggedIn: false
   };
 
-  componentDidMount() {
-    axios.get("http://localhost:3001/articles/all").then(res => {
-      console.log(res);
-    });
-  }
-
+  handleLogIn = e => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/user/login", {
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(res => {
+        localStorage.token = res.data.signedJwt;
+        this.setState({
+          user: res.data.user,
+          loggedIn: true
+        });
+        console.log(this.state.user);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
   render() {
     return (
       <div>
@@ -34,7 +48,7 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <FrontPage />
+                    <FrontPageContainer />
                   </div>
                 );
               }}
@@ -54,7 +68,7 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <SignIn />
+                    <SignIn handleLogin={this.handleLogIn} />
                   </div>
                 );
               }}
@@ -64,7 +78,7 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <SignIn />
+                    <SignUp />
                   </div>
                 );
               }}

@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 
 export default class SignIn extends Component {
+  state = {
+    email: "",
+    password: ""
+  };
+
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
   render() {
     return (
       <div>
