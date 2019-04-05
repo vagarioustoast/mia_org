@@ -19,6 +19,12 @@ class App extends Component {
     email: "",
     password: ""
   };
+
+  componentDidMount() {
+    localStorage.token
+      ? this.setState({ loggedIn: true })
+      : this.setState({ loggedIn: false });
+  }
   // Handle Form Input
   handleInput = e => {
     this.setState({
@@ -53,7 +59,8 @@ class App extends Component {
         password: this.state.password
       })
       .then(res => {
-        localStorage.token = res.data.signedJwt;
+        console.log("RES", res);
+        localStorage.setItem("token", res.data.signedJWT);
         this.setState({
           user: res.data.user,
           loggedIn: true,
