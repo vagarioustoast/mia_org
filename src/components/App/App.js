@@ -41,7 +41,7 @@ class App extends Component {
         password: this.state.password
       })
       .then(res => {
-        localStorage.token = res.data.signedJwt;
+        localStorage.setItem("token", res.data.signedJWT);
 
         this.setState({
           user: res.data.user,
@@ -59,7 +59,6 @@ class App extends Component {
         password: this.state.password
       })
       .then(res => {
-        console.log("RES", res);
         localStorage.setItem("token", res.data.signedJWT);
         this.setState({
           user: res.data.user,

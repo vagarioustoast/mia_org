@@ -18,7 +18,18 @@ export default class Header extends Component {
             Marxist Internet Archive
           </a>
         </h1>
-        <a href="/signin">Sign in</a>
+        <a
+          href="/signin"
+          className="f7 f5-l link bg-animate black-80 dib pa2 ph4-l"
+        >
+          Sign in
+        </a>
+        <a
+          href="/logout"
+          className="f7 f5-l link bg-animate black-80 dib pa2 ph4-l"
+        >
+          Log Out
+        </a>
 
         <nav className="bt bb tc mw8 center mt2">
           <a

@@ -9,7 +9,7 @@ export default class FrontPageContainer extends Component {
 
   componentDidMount() {
     axios.get("http://localhost:3001/articles/all").then(res => {
-      console.log(res);
+      console.log(res.data);
     });
   }
   render() {

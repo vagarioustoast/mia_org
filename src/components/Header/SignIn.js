@@ -46,7 +46,7 @@ export default class SignIn extends Component {
             </div>
             <div className="lh-copy mt3">
               <a href="/signup" className="f6 link dim black db">
-                Sign up
+                No account? Sign up now
               </a>
             </div>
           </form>
