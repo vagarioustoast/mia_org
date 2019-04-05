@@ -14,13 +14,41 @@ import "./App.css";
 class App extends Component {
   state = {
     user: "",
-    loggedIn: false
+    loggedIn: false,
+    displayName: "",
+    email: "",
+    password: ""
   };
+  // Handle Form Input
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+  // Registration
+  handleSignUp = e => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/users/signup", {
+        displayName: this.state.displayName,
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(res => {
+        localStorage.token = res.data.signedJwt;
 
+        this.setState({
+          user: res.data.user,
+          loggedIn: true
+        });
+      })
+      .catch(err => console.error(err));
+  };
+  // Log In
   handleLogIn = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/user/login", {
+      .post("http://localhost:3001/users/login", {
         email: this.state.email,
         password: this.state.password
       })
@@ -28,7 +56,8 @@ class App extends Component {
         localStorage.token = res.data.signedJwt;
         this.setState({
           user: res.data.user,
-          loggedIn: true
+          loggedIn: true,
+          password: ""
         });
         console.log(this.state.user);
       })
@@ -68,7 +97,10 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <SignIn handleLogin={this.handleLogIn} />
+                    <SignIn
+                      handleInput={this.handleInput}
+                      handleLogin={this.handleLogIn}
+                    />
                   </div>
                 );
               }}
@@ -78,7 +110,10 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <SignUp />
+                    <SignUp
+                      handleInput={this.handleInput}
+                      handleSignUp={this.handleSignUp}
+                    />
                   </div>
                 );
               }}

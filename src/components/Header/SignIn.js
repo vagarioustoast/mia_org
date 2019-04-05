@@ -1,17 +1,6 @@
 import React, { Component } from "react";
 
 export default class SignIn extends Component {
-  state = {
-    email: "",
-    password: ""
-  };
-
-  handleInput = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
   render() {
     return (
       <div>
@@ -26,8 +15,9 @@ export default class SignIn extends Component {
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="email"
-                  name="email-address"
+                  name="email"
                   id="email-address"
+                  onChange={this.props.handleInput}
                 />
               </div>
               <div className="mv3">
@@ -39,6 +29,7 @@ export default class SignIn extends Component {
                   type="password"
                   name="password"
                   id="password"
+                  onChange={this.props.handleInput}
                 />
               </div>
               <label className="pa0 ma0 lh-copy f6 pointer">
@@ -49,6 +40,7 @@ export default class SignIn extends Component {
               <input
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
+                onClick={this.props.handleLogin}
                 value="Sign in"
               />
             </div>
