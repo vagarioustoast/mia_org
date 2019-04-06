@@ -10,29 +10,34 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <h1>
+        <div>
+          <h1>
+            <a
+              href="/"
+              className="mt2 mb0 baskerville i fw1 f1 no-underline black-80"
+            >
+              Marxist Internet Archive
+            </a>
+          </h1>
           <a
-            href="/"
-            className="mt2 mb0 baskerville i fw1 f1 no-underline black-80"
+            href="/signin"
+            className="f7 f5-l link bg-animate black-80 dib ph2-l"
           >
-            Marxist Internet Archive
+            Sign in
           </a>
-        </h1>
-        <a
-          href="/signin"
-          className="f7 f5-l link bg-animate black-80 dib ph2-l"
-        >
-          Sign in
-        </a>
-        <a
-          href="/logout"
-          className="f7 f5-l link bg-animate black-80 dib ph2-l"
-        >
-          Log Out
-        </a>
-        <a href="#about" className="f7 f5-l link bg-animate black-80 dib ph2-l">
-          About
-        </a>
+          <a
+            href="/logout"
+            className="f7 f5-l link bg-animate black-80 dib ph2-l"
+          >
+            Log Out
+          </a>
+          <a
+            href="#about"
+            className="f7 f5-l link bg-animate black-80 dib ph2-l"
+          >
+            About
+          </a>
+        </div>
 
         <nav className="bt bb tc mw8 center mt2">
           <a

@@ -71,6 +71,7 @@ class App extends Component {
         console.error(err);
       });
   };
+
   render() {
     return (
       <div>
