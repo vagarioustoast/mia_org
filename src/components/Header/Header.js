@@ -41,7 +41,7 @@ export default class Header extends Component {
 
         <nav className="bt bb tc mw8 center mt2">
           <a
-            href="/articles/category/First_International"
+            href="/articles/category/First International"
             className="f7 f5-l link bg-animate black-80 dib pa2 ph4-l"
           >
             First International
@@ -62,21 +62,21 @@ export default class Header extends Component {
           </a>
 
           <a
-            href="/articles/category/Left_Communism"
+            href="/articles/category/Left Communism"
             className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
           >
             Left Communism
           </a>
 
           <a
-            href="/articles/category/African_Liberation"
+            href="/articles/category/African Liberation"
             className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
           >
             African Liberation
           </a>
 
           <a
-            href="/articles/category/Black_Liberation"
+            href="/articles/category/Black Liberation"
             className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
           >
             Black Liberation
