@@ -30,7 +30,12 @@ export default class FrontPageContainer extends Component {
             </p>
             <h4 className="red"> by {article.author.name}</h4>
             <hr />
-            <a href={"articles/article/" + article._id}>Read more</a>
+            <a
+              className="black-80 link"
+              href={"articles/article/" + article._id}
+            >
+              Read more
+            </a>
           </div>
         </article>
       );

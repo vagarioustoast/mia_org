@@ -27,6 +27,14 @@ export default class CategoryContainer extends Component {
               <p className="f5 f4-l lh-copy athelas">
                 {article.content.slice(0, 200)}...
               </p>
+              <h4>
+                <a
+                  className="black-80 link"
+                  href={"/articles/article/" + article._id}
+                >
+                  Read more
+                </a>
+              </h4>
             </div>
           </div>
           <p className="f6 lh-copy gray mv0">
@@ -39,7 +47,7 @@ export default class CategoryContainer extends Component {
     return (
       <div>
         <section className="mw7 center">
-          <h2 className="athelas ph3 ph0-l">News</h2>
+          <h2 className="athelas ph3 ph0-l">Library</h2>
           <Category categoryArticles={categoryArticles} />
         </section>
       </div>
