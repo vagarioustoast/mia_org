@@ -30,23 +30,21 @@ export default class ArticleContainer extends Component {
             <div className="dtc v-mid">
               <header className="white-70">
                 <h2 className="f6 fw1 ttu tracked mb2 lh-title">Issue Six</h2>
-                <h3 className="f6 fw1 lh-title">Summer MMXVI</h3>
+                <h3 className="f6 fw1 lh-title">{article.category}</h3>
               </header>
               <h1 className="f1 f-headline-l fw1 i white-60">
                 {article.title}
               </h1>
               <blockquote className="ph0 mh0 measure f4 lh-copy center">
-                <p className="fw1 white-70">
-                  It's the space you put between the notes that make the music.
-                </p>
+                <p className="fw1 white-70">{article.author}</p>
                 <cite className="f6 ttu tracked fs-normal">
-                  {article.author}
+                  Source: {article.source}
                 </cite>
               </blockquote>
             </div>
           </div>
           <div className="center measure-wide f5 pv5 lh-copy ph2">
-            <h1 className="f1 lh-title">{article.title}</h1>
+            {/* <h1 className="f1 lh-title">{article.title}</h1> */}
             {article.content}
           </div>
         </article>
