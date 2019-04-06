@@ -3,10 +3,10 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import axios from "axios";
 import Header from "../Header/Header";
-import FrontPageContainer from "../FrontPage/FrontPageContainer";
 import SignIn from "../Header/SignIn";
 import SignUp from "../Header/SignUp";
 import ProfileContainer from "../Profile/ProfileContainer";
+import FrontPageContainer from "../FrontPage/FrontPageContainer";
 import CategoryContainer from "../Category/CategoryContainer";
 import ArticleContainer from "../Article/ArticleContainer";
 import Footer from "../Footer/Footer";

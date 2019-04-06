@@ -36,7 +36,7 @@ export default class ArticleContainer extends Component {
                 {article.title}
               </h1>
               <blockquote className="ph0 mh0 measure f4 lh-copy center">
-                <p className="fw1 white-70">{article.author}</p>
+                <p className="fw1 white-70">{article.author.name}</p>
                 <cite className="f6 ttu tracked fs-normal">
                   Source: {article.source}
                 </cite>
