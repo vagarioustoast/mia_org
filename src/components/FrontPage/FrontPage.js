@@ -20,6 +20,9 @@ export default class FrontPage extends Component {
             </div>
           </div>
         </div>
+        <section id="news" className="black">
+          <h1>News</h1>
+        </section>
         <section id="about">
           <h1>About Section</h1>
         </section>

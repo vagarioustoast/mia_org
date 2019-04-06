@@ -7,16 +7,14 @@ export default class CategoryContainer extends Component {
     articles: []
   };
 
-  findArticles = category => {
-    axios
-      .get(`http://localhost:3001/articles/showCategory/${category}`)
-      .then(res => {
-        console.log(res.data);
-        this.setState({
-          articles: res.data
-        });
+  componentDidMount() {
+    axios.get(`http://localhost:3001${window.location.pathname}`).then(res => {
+      console.log(res.data);
+      this.setState({
+        articles: res.data
       });
-  };
+    });
+  }
 
   render() {
     return (

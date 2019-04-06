@@ -32,7 +32,7 @@ export default class Header extends Component {
             Log Out
           </a>
           <a
-            href="#about"
+            href="/#about"
             className="f7 f5-l link bg-animate black-80 dib ph2-l"
           >
             About
@@ -48,7 +48,7 @@ export default class Header extends Component {
           </a>
 
           <a
-            href="/articles/category/Western_Marxism"
+            href="/articles/category/Western Marxism"
             className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
           >
             Western Marxism
