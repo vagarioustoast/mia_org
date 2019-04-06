@@ -28,7 +28,10 @@ export default class FrontPageContainer extends Component {
             <p className="f6 f5-ns lh-copy measure mv0">
               {article.content.slice(0, 150)}...
             </p>
-            <h4 className="red"> by {article.author.name}</h4>
+            <h4>
+              {" "}
+              by <span className="red">{article.author.name}</span>
+            </h4>
             <hr />
             <a
               className="black-80 link"

@@ -47,7 +47,7 @@ export default class CategoryContainer extends Component {
     return (
       <div>
         <section className="mw7 center">
-          <h2 className="athelas ph3 ph0-l">Library</h2>
+          <h1 className="athelas ph3 ph0-l">Library</h1>
           <Category categoryArticles={categoryArticles} />
         </section>
       </div>

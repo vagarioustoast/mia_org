@@ -8,6 +8,7 @@ import SignIn from "../Header/SignIn";
 import SignUp from "../Header/SignUp";
 import ProfileContainer from "../Profile/ProfileContainer";
 import CategoryContainer from "../Category/CategoryContainer";
+import ArticleContainer from "../Article/ArticleContainer";
 import Footer from "../Footer/Footer";
 import "./App.css";
 
@@ -131,6 +132,16 @@ class App extends Component {
                 return (
                   <div>
                     <CategoryContainer />
+                  </div>
+                );
+              }}
+            />
+            <Route
+              path="/articles/article"
+              render={() => {
+                return (
+                  <div>
+                    <ArticleContainer />
                   </div>
                 );
               }}
