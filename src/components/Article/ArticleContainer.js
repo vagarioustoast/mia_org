@@ -43,7 +43,7 @@ export default class ArticleContainer extends Component {
               </blockquote>
             </div>
           </div>
-          <div className="center measure-wide f5 pv5 lh-copy ph2">
+          <div className="georgia center measure-wide f4 f4-l pv5 lh-copy ph2">
             {/* <h1 className="f1 lh-title">{article.title}</h1> */}
             {article.content}
           </div>

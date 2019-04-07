@@ -14,7 +14,7 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    user: "",
+    user: [],
     loggedIn: false,
     displayName: "",
     email: "",
@@ -64,6 +64,7 @@ class App extends Component {
         this.setState({
           user: res.data.user,
           loggedIn: true,
+          displayName: res.data.user.displayName,
           password: ""
         });
         console.log(this.state.user);
@@ -74,6 +75,7 @@ class App extends Component {
   };
 
   render() {
+    const { user } = this.state;
     return (
       <div>
         <Header />
@@ -95,7 +97,7 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <ProfileContainer />
+                    <ProfileContainer user={user} />
                   </div>
                 );
               }}
