@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import SignIn from "../Header/SignIn";
 import SignUp from "../Header/SignUp";
 import ProfileContainer from "../Profile/ProfileContainer";
+import AdminContainer from "../UserAdmin/AdminContainer";
 import FrontPageContainer from "../FrontPage/FrontPageContainer";
 import CategoryContainer from "../Category/CategoryContainer";
 import ArticleContainer from "../Article/ArticleContainer";
@@ -109,6 +110,19 @@ class App extends Component {
               }}
             />
             <Route
+              path="/admin"
+              render={() => {
+                return (
+                  <div>
+                    <AdminContainer
+                      user={user}
+                      handleInput={this.handleInput}
+                    />
+                  </div>
+                );
+              }}
+            />
+            <Route
               path="/signin"
               render={() => {
                 return (
@@ -149,7 +163,7 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <ArticleContainer />
+                    <ArticleContainer user={user} />
                   </div>
                 );
               }}
