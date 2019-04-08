@@ -6,7 +6,7 @@ export default class ProfileContainer extends Component {
   render() {
     return (
       <div>
-        <Profile />
+        <Profile user={this.props.user} />
       </div>
     );
   }

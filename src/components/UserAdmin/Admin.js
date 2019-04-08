@@ -5,10 +5,12 @@ export default class Admin extends Component {
     return (
       <div>
         <h1>Admin Page</h1>
+
+        {/* Article Submission */}
         <h2>Add Work</h2>
         <form className="pa4 black-80">
           <div className="measure">
-            <label for="name" className="f6 b db mb2">
+            <label htmlFor="name" className="f6 b db mb2">
               Title <span className="normal black-60">(Required)</span>
             </label>
             <input
@@ -22,7 +24,7 @@ export default class Admin extends Component {
             </small>
           </div>
           <div className="measure">
-            <label for="name" className="f6 b db mb2">
+            <label htmlFor="name" className="f6 b db mb2">
               Author <span className="normal black-60">(Required)</span>
             </label>
             <input
@@ -36,7 +38,7 @@ export default class Admin extends Component {
             </small>
           </div>
           <div className="measure">
-            <label for="name" className="f6 b db mb2">
+            <label htmlFor="name" className="f6 b db mb2">
               Publication Date{" "}
               <span className="normal black-60">(Required)</span>
             </label>
@@ -51,23 +53,44 @@ export default class Admin extends Component {
             </small>
           </div>
           <div>
-            <label for="comment" class="f6 b db mb2">
-              Content <span class="normal black-60">(optional)</span>
+            <label htmlFor="comment" className="f6 b db mb2">
+              Content <span className="normal black-60">(optional)</span>
             </label>
             <textarea
               id="comment"
               name="comment"
-              class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
+              className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
               aria-describedby="comment-desc"
             />
-            <small id="comment-desc" class="f6 black-60">
+            <small id="comment-desc" className="f6 black-60">
               Paste the content here. Can use this text to{" "}
-              <a href="#" class="link underline black-80 hover-black">
+              <a href="#" className="link underline black-80 hover-black">
                 link to more info.
               </a>
             </small>
           </div>
         </form>
+        <h2>Users</h2>
+        <div className="pa4">
+          <div className="overflow-auto">
+            <table className="f6 w-100 mw8 center" cellSpacing="0">
+              <thead>
+                <tr>
+                  <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white">
+                    Username
+                  </th>
+                  <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white">
+                    Email
+                  </th>
+                  <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white">
+                    Admin
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="l1-copy">{this.props.userList}</tbody>
+            </table>
+          </div>
+        </div>
       </div>
     );
   }

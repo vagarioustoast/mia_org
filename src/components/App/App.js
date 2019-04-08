@@ -47,7 +47,9 @@ class App extends Component {
 
         this.setState({
           user: res.data.user,
-          loggedIn: true
+          loggedIn: true,
+          displayName: res.data.user.displayName,
+          password: ""
         });
       })
       .catch(err => console.error(err));
