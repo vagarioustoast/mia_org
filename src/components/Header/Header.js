@@ -28,6 +28,7 @@ export default class Header extends Component {
           <a
             href="/logout"
             className="f7 f5-l link bg-animate black-80 dib ph2-l"
+            onClick={this.props.handleLogOut}
           >
             Log Out
           </a>

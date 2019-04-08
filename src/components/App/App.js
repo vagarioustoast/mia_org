@@ -74,11 +74,17 @@ class App extends Component {
       });
   };
 
+  // Log Out
+  handleLogOut = e => {
+    e.preventDefault();
+    localStorage.clear();
+  };
+
   render() {
     const { user } = this.state;
     return (
       <div>
-        <Header />
+        <Header handleLogOut={this.handleLogOut} />
         <div className="body">
           <Switch>
             <Route
