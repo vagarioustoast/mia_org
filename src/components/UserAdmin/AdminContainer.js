@@ -30,7 +30,7 @@ export default class AdminContainer extends Component {
             </a>
           </td>
           <td className="pv3 pr3 bb b--black-20">
-            <a className="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">
+            <a className="f6 link dim ph3 pv2 mb2 dib white bg-red" href="#0">
               Delete
             </a>
           </td>

@@ -8,7 +8,7 @@ export default class Admin extends Component {
 
         {/* Article Submission */}
         <h2>Add Work</h2>
-        <form className="pa4 black-80">
+        <form className="center pa4 black-80">
           <div className="measure">
             <label htmlFor="name" className="f6 b db mb2">
               Title <span className="normal black-60">(Required)</span>
@@ -70,6 +70,7 @@ export default class Admin extends Component {
             </small>
           </div>
         </form>
+        {/* Displays User List */}
         <h2>Users</h2>
         <div className="pa5">
           <div className="overflow-auto">
@@ -87,8 +88,6 @@ export default class Admin extends Component {
                   </th>
                 </tr>
               </thead>
-
-              {/* Displays User List */}
               <tbody className="l1-copy">{this.props.userList}</tbody>
             </table>
           </div>
