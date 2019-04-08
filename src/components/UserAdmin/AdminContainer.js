@@ -18,19 +18,19 @@ export default class AdminContainer extends Component {
     const { users } = this.state;
     const userList = users.map(user => {
       return (
-        <tr>
+        <tr key={user._id}>
           <td className="pv3 pr3 bb b--black-20">{user.displayName}</td>
           <td className="pv3 pr3 bb b--black-20">{user.email}</td>
           <td className="pv3 pr3 bb b--black-20">
             {user.isAdmin ? "True" : "False"}
           </td>
           <td className="pv3 pr3 bb b--black-20">
-            <a class="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">
+            <a className="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">
               Edit
             </a>
           </td>
           <td className="pv3 pr3 bb b--black-20">
-            <a class="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">
+            <a className="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">
               Delete
             </a>
           </td>

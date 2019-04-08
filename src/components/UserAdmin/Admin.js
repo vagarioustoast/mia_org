@@ -71,22 +71,24 @@ export default class Admin extends Component {
           </div>
         </form>
         <h2>Users</h2>
-        <div className="pa4">
+        <div className="pa5">
           <div className="overflow-auto">
             <table className="f6 w-100 mw8 center" cellSpacing="0">
               <thead>
                 <tr>
-                  <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white">
+                  <th className="f4 fw6  b--black-20 tl pb3 pr3 bg-white">
                     Username
                   </th>
-                  <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white">
+                  <th className="f4 fw6 b--black-20 tl pb3 pr3 bg-white">
                     Email
                   </th>
-                  <th className="fw6 bb b--black-20 tl pb3 pr3 bg-white">
+                  <th className="f4 fw6 b--black-20 tl pb3 pr3 bg-white">
                     Admin
                   </th>
                 </tr>
               </thead>
+
+              {/* Displays User List */}
               <tbody className="l1-copy">{this.props.userList}</tbody>
             </table>
           </div>
