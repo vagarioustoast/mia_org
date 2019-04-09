@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class Profile extends Component {
-  state = {
-    annotations: []
-  };
-
   render() {
     const user = this.props.user;
     return (
       <div className="measure center">
         <figure>
-          <img src={user.avatarUrl ? user.avatarUrl : ""} alt="user" />
+          <img
+            src={
+              user.avatarUrl ||
+              `https://pbs.twimg.com/media/CyjhJzHWQAkwG7e.png`
+            }
+            className="h3 w3"
+            alt="user"
+          />
         </figure>
         <a className="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">
           Edit
@@ -20,10 +23,7 @@ export default class Profile extends Component {
         <p>{user.description}</p>
         <div className="annotations">
           <h3 className="red">{user.displayName}'s Contributions</h3>
-          <p>Annotation</p>
-          <p>Annotation</p>
-          <p>Annotation</p>
-          <p>Annotation</p>
+          {this.props.annotationsList}
         </div>
       </div>
     );
