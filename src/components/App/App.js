@@ -21,7 +21,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const user = JSON.parse(localStorage.user);
+    const user = localStorage.user ? JSON.parse(localStorage.user) : "";
     localStorage.token
       ? this.setState({
           loggedIn: true,
@@ -46,13 +46,12 @@ class App extends Component {
         password: this.state.password
       })
       .then(res => {
-        let user = JSON.stringify(res.data.user);
+        let user = res.data.user;
         localStorage.setItem("token", res.data.signedJWT);
-        localStorage.setItem("user", user);
+        localStorage.setItem("user", JSON.stringify(user));
         this.setState({
-          user: res.data.user,
+          user: user,
           loggedIn: true,
-          displayName: res.data.user.displayName,
           password: ""
         });
         console.log(this.state.user);
@@ -74,7 +73,6 @@ class App extends Component {
         this.setState({
           user: user,
           loggedIn: true,
-          displayName: res.data.user.displayName,
           password: ""
         });
         console.log(this.state.user);
