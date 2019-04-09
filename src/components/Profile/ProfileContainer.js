@@ -20,7 +20,7 @@ export default class ProfileContainer extends Component {
   render() {
     const { annotations } = this.state;
     const annotationsList = annotations.map(annotation => {
-      return <p>{annotation.content}</p>;
+      return <p key={annotation._id}>{annotation.content}</p>;
     });
     return (
       <div>

@@ -2,34 +2,47 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class Admin extends Component {
-  state = {
-    title: "",
-    pubDate: "",
-    source: "",
-    content: ""
+  state = {};
+
+  // Handle Form Input
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
+
   // Add a Work
   addWork = e => {
     e.preventDefault();
     axios.post("http://localhost:3001/articles/create", {
       title: this.state.title,
-      author: this.author,
+      author: this.state.author,
       pubDate: this.state.pubDate,
       content: this.state.content,
       source: this.state.source
     });
   };
+
   render() {
     const handleInput = this.props.handleInput;
     return (
       <div>
         {/* Author Submission */}
-        <div className="measure center">
-          <h1>Add an Author</h1>
+        <div className="measure center bg-black">
+          <h1 className="white">
+            Add an Author{" "}
+            <span>
+              <img
+                src="https://pbs.twimg.com/media/CyjhJzHWQAkwG7e.png"
+                className="br-100 h2 w2 dib"
+                alt="avatar"
+              />
+            </span>
+          </h1>
           <form className="pa4 black-80">
             <div className="measure">
-              <label htmlFor="name" className="f6 b db mb2">
-                Name <span className="normal black-60">(Required)</span>
+              <label htmlFor="name" className="white f6 b db mb2">
+                Name <span className="white normal black-60">(Required)</span>
               </label>
               <input
                 id="name"
@@ -37,15 +50,15 @@ export default class Admin extends Component {
                 type="text"
                 name="name"
                 aria-describedby="name-desc"
-                onChange={handleInput}
+                onChange={this.handleInput}
               />
-              <small id="name-desc" className="f6 black-60 db mb2">
+              <small id="name-desc" className="f6 white-90 db mb2">
                 e.g, "Max Horkheimer"
               </small>
             </div>
             <div className="measure">
-              <label htmlFor="name" className="f6 b db mb2">
-                Life Span <span className="normal black-60">(Required)</span>
+              <label htmlFor="name" className="white f6 b db mb2">
+                Life Span <span className="normal white-90">(Required)</span>
               </label>
               <input
                 id="name"
@@ -53,15 +66,15 @@ export default class Admin extends Component {
                 type="text"
                 name="lifeSpan"
                 aria-describedby="name-desc"
-                onChange={handleInput}
+                onChange={this.handleInput}
               />
-              <small id="name-desc" className="f6 black-60 db mb2">
+              <small id="name-desc" className="f6 white-90 db mb2">
                 e.g, "1888-1945"
               </small>
             </div>
             <div className="measure">
-              <label htmlFor="name" className="f6 b db mb2">
-                Url Picture <span className="normal black-60">(Required)</span>
+              <label htmlFor="name" className="white f6 b db mb2">
+                Url Picture <span className="normal white-90">(Required)</span>
               </label>
               <input
                 id="name"
@@ -69,14 +82,14 @@ export default class Admin extends Component {
                 type="text"
                 name="authorPicUrl"
                 aria-describedby="name-desc"
-                onChange={handleInput}
+                onChange={this.handleInput}
               />
-              <small id="name-desc" className="f6 black-60 db mb2">
+              <small id="name-desc" className="f6 white-90 db mb2">
                 Paste URL Here
               </small>
             </div>
             <div>
-              <label htmlFor="comment" className="f6 b db mb2">
+              <label htmlFor="comment" className="white f6 b db mb2">
                 Biography <span className="normal black-60">(Required)</span>
               </label>
               <textarea
@@ -84,22 +97,28 @@ export default class Admin extends Component {
                 name="content"
                 className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
                 aria-describedby="comment-desc"
-                onChange={handleInput}
+                onChange={this.handleInput}
               />
             </div>
-            <a
-              className="f6 link ba bw2 ph3 pv2 mb2 dib black"
-              href="#0"
-              onClick={this.addWork}
-            >
+            <a className="f6 link ba bw2 ph3 pv2 mb2 dib red" href="#0">
               Submit
             </a>
           </form>
         </div>
+        <hr className="w-80" />
         <div>
           {/* Article Submission */}
           <div className="measure center">
-            <h1>Add an Article</h1>
+            <h1>
+              Add an Article{" "}
+              <span>
+                <img
+                  src="https://pbs.twimg.com/media/CyjhJzHWQAkwG7e.png"
+                  className="br-100 h2 w2 dib"
+                  alt="avatar"
+                />
+              </span>
+            </h1>
             <form className="pa4 black-80">
               <div className="measure">
                 <label htmlFor="name" className="f6 b db mb2">
@@ -111,7 +130,7 @@ export default class Admin extends Component {
                   type="text"
                   name="title"
                   aria-describedby="name-desc"
-                  onChange={handleInput}
+                  onChange={this.handleInput}
                 />
                 <small id="name-desc" className="f6 black-60 db mb2">
                   e.g, "The Work of Art in the Age of Mechanical Reproduction"
@@ -122,7 +141,9 @@ export default class Admin extends Component {
                 <label htmlFor="name" className="f6 b db mb2">
                   Author <span className="normal black-60">(Required)</span>
                 </label>
-                <select>{this.props.authorList}</select>
+                <select name="author" onChange={this.handleInput}>
+                  {this.props.authorList}
+                </select>
                 <small id="name-desc" className="f6 black-60 db mb2">
                   e.g, "Walter Benjamin"
                 </small>
@@ -139,7 +160,7 @@ export default class Admin extends Component {
                   type="text"
                   name="pubDate"
                   aria-describedby="name-desc"
-                  onChange={handleInput}
+                  onChange={this.handleInput}
                 />
                 <small id="name-desc" className="f6 black-60 db mb2">
                   e.g, "1888"
@@ -155,7 +176,7 @@ export default class Admin extends Component {
                   type="text"
                   name="source"
                   aria-describedby="name-desc"
-                  onChange={handleInput}
+                  onChange={this.handleInput}
                 />
                 <small id="name-desc" className="f6 black-60 db mb2">
                   e.g, "1888"
@@ -171,7 +192,7 @@ export default class Admin extends Component {
                   type="text"
                   name="category"
                   aria-describedby="name-desc"
-                  onChange={handleInput}
+                  onChange={this.handleInput}
                 />
                 <small id="name-desc" className="f6 black-60 db mb2">
                   e.g, "Philosophy"
@@ -186,7 +207,7 @@ export default class Admin extends Component {
                   name="content"
                   className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
                   aria-describedby="comment-desc"
-                  onChange={handleInput}
+                  onChange={this.handleInput}
                 />
               </div>
               <a
@@ -198,6 +219,7 @@ export default class Admin extends Component {
               </a>
             </form>
           </div>
+          <hr className="w-80" />
 
           {/* Displays User List */}
           <h1>Users</h1>

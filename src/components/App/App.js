@@ -124,10 +124,7 @@ class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <AdminContainer
-                      user={user}
-                      handleInput={this.handleInput}
-                    />
+                    <AdminContainer user={user} />
                   </div>
                 );
               }}

@@ -47,7 +47,7 @@ export default class AdminContainer extends Component {
     // Render Author List
     const authorList = authors.map(author => {
       return (
-        <option value={author.name} name="author" key={author._id}>
+        <option value={author._id} name="author" key={author._id}>
           {author.name}
         </option>
       );
@@ -55,11 +55,7 @@ export default class AdminContainer extends Component {
 
     return (
       <div>
-        <Admin
-          userList={userList}
-          authorList={authorList}
-          handleInput={this.props.handleInput}
-        />
+        <Admin userList={userList} authorList={authorList} />
       </div>
     );
   }
