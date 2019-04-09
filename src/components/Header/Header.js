@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
 import "./Header.css";
 
 export default class Header extends Component {

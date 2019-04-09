@@ -17,15 +17,18 @@ class App extends Component {
   state = {
     user: [],
     loggedIn: false,
-    displayName: "",
-    email: "",
     password: ""
   };
 
   componentDidMount() {
+    const user = JSON.parse(localStorage.user);
     localStorage.token
-      ? this.setState({ loggedIn: true })
+      ? this.setState({
+          loggedIn: true,
+          user: user
+        })
       : this.setState({ loggedIn: false });
+    console.log(localStorage);
   }
   // Handle Form Input
   handleInput = e => {
@@ -43,14 +46,16 @@ class App extends Component {
         password: this.state.password
       })
       .then(res => {
+        let user = JSON.stringify(res.data.user);
         localStorage.setItem("token", res.data.signedJWT);
-
+        localStorage.setItem("user", user);
         this.setState({
           user: res.data.user,
           loggedIn: true,
           displayName: res.data.user.displayName,
           password: ""
         });
+        console.log(this.state.user);
       })
       .catch(err => console.error(err));
   };
@@ -63,9 +68,11 @@ class App extends Component {
         password: this.state.password
       })
       .then(res => {
+        let user = res.data.user;
         localStorage.setItem("token", res.data.signedJWT);
+        localStorage.setItem("user", JSON.stringify(user));
         this.setState({
-          user: res.data.user,
+          user: user,
           loggedIn: true,
           displayName: res.data.user.displayName,
           password: ""
@@ -80,6 +87,9 @@ class App extends Component {
   // Log Out
   handleLogOut = e => {
     e.preventDefault();
+    this.setState({
+      loggedIn: false
+    });
     localStorage.clear();
   };
 

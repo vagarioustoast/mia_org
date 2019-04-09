@@ -54,7 +54,7 @@ export default class Admin extends Component {
           </div>
           <div>
             <label htmlFor="comment" className="f6 b db mb2">
-              Content <span className="normal black-60">(optional)</span>
+              Content <span className="normal black-60">(Required)</span>
             </label>
             <textarea
               id="comment"
@@ -62,13 +62,10 @@ export default class Admin extends Component {
               className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
               aria-describedby="comment-desc"
             />
-            <small id="comment-desc" className="f6 black-60">
-              Paste the content here. Can use this text to{" "}
-              <a href="#" className="link underline black-80 hover-black">
-                link to more info.
-              </a>
-            </small>
           </div>
+          <a className="f6 link ba bw2 ph3 pv2 mb2 dib black" href="#0">
+            Submit
+          </a>
         </form>
         {/* Displays User List */}
         <h2>Users</h2>
@@ -84,7 +81,7 @@ export default class Admin extends Component {
                     Email
                   </th>
                   <th className="f4 fw6 b--black-20 tl pb3 pr3 bg-white">
-                    Admin
+                    Admin?
                   </th>
                 </tr>
               </thead>

@@ -7,7 +7,7 @@ export default class AdminContainer extends Component {
     users: []
   };
   async componentDidMount() {
-    const res = await fetch(`http://localhost:3001/users/all`);
+    const res = await axios(`http://localhost:3001/users/all`);
     const users = await res.json();
     this.setState({
       users: users

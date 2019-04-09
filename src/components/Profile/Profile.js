@@ -5,7 +5,7 @@ export default class Profile extends Component {
     return (
       <div>
         <figure>
-          <img src="#" />
+          <img src="#" alt="user" />
         </figure>
         <h2>Name</h2>
         <p>Biography</p>
