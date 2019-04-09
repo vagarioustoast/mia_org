@@ -28,14 +28,11 @@ export default class ArticleContainer extends Component {
             }}
           >
             <div className="dtc v-mid">
-              <header className="white-70">
-                <h2 className="f6 fw1 ttu tracked mb2 lh-title">Issue Six</h2>
-                <h3 className="f6 fw1 lh-title">{article.category}</h3>
-              </header>
               <h1 className="f1 f-headline-l fw1 i white-60">
                 {article.title}
               </h1>
               <blockquote className="ph0 mh0 measure f4 lh-copy center">
+                <h3 className="f6 fw1 lh-title">{article.category}</h3>
                 <p className="fw1 white-70">{article.author.name}</p>
                 <cite className="f6 ttu tracked fs-normal">
                   Source: {article.source}
@@ -47,6 +44,40 @@ export default class ArticleContainer extends Component {
             {/* <h1 className="f1 lh-title">{article.title}</h1> */}
             {article.content}
           </div>
+          <hr className="w-60" />
+          {/* Author */}
+          <h1>About {article.author.name}</h1>
+          <article className="mw8 center bg-black br3 pa3 pa4-ns mv3 ba b--black-10">
+            <div className="tc">
+              <img
+                src={
+                  article.author.authorPicUrl ||
+                  `https://pbs.twimg.com/media/CyjhJzHWQAkwG7e.png`
+                }
+                className="br-100 h4 w4 dib"
+                title="Photo of a kitty staring at you"
+              />
+              <hr className="mw3 bb bw1 b--black-10" />
+            </div>
+            <p className="lh-copy measure-center f4 white-80">
+              {article.author.biography}
+            </p>
+          </article>
+          {/* Annotations */}
+          <h1 className="red-80">Annotations</h1>
+          <article className="center mw5 mw6-ns hidden ba mv4">
+            <h1 className="f4 bg-near-black white mv0 pv2 ph3">
+              Title of card
+            </h1>
+            <div className="pa3 bt">
+              <p className="f6 f5-ns lh-copy measure mv0">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum.
+              </p>
+            </div>
+          </article>
         </article>
       );
     });

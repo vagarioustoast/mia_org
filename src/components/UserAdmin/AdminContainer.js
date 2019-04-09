@@ -19,15 +19,7 @@ export default class AdminContainer extends Component {
     console.log(users);
     console.log(authors);
   }
-  // Add a Work
-  addWork = e => {
-    e.preventDefault();
-    axios.post("http://localhost:3001/users/", {
-      displayName: this.state.displayName,
-      email: this.state.email,
-      password: this.state.password
-    });
-  };
+
   render() {
     const { users } = this.state;
     const { authors } = this.state;
@@ -52,10 +44,10 @@ export default class AdminContainer extends Component {
         </tr>
       );
     });
-
+    // Render Author List
     const authorList = authors.map(author => {
       return (
-        <option value={author.name} key={author._id}>
+        <option value={author.name} name="author" key={author._id}>
           {author.name}
         </option>
       );
@@ -63,7 +55,11 @@ export default class AdminContainer extends Component {
 
     return (
       <div>
-        <Admin userList={userList} authorList={authorList} />
+        <Admin
+          userList={userList}
+          authorList={authorList}
+          handleInput={this.props.handleInput}
+        />
       </div>
     );
   }

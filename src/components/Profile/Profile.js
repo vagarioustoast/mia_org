@@ -9,7 +9,7 @@ export default class Profile extends Component {
   render() {
     const user = this.props.user;
     return (
-      <div>
+      <div className="measure center">
         <figure>
           <img src={user.avatarUrl ? user.avatarUrl : ""} alt="user" />
         </figure>
