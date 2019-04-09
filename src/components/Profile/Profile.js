@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Profile extends Component {
+  state = {
+    annotations: []
+  };
+
   render() {
     const user = this.props.user;
     return (
       <div>
         <figure>
-          <img src={user.avatarUrl} alt="user" />
+          <img src={user.avatarUrl ? user.avatarUrl : ""} alt="user" />
         </figure>
         <a className="f6 link dim ph3 pv2 mb2 dib white bg-black" href="#0">
           Edit

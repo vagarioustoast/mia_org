@@ -3,14 +3,14 @@ import Profile from "./Profile";
 import axios from "axios";
 
 export default class ProfileContainer extends Component {
-  state = {
-    annotations: []
-  };
-  async componentDidMount() {
-    const res = await fetch("http://localhost:3001/annotations/all");
-    const annotations = await res.json();
-    console.log(annotations);
-  }
+  // async componentDidMount() {
+  //   const user = this.props.user;
+  //   console.log(user);
+  //   const res = await fetch(`http://localhost:3001/annotations/${user._id}`);
+  //   const annotations = await res.json();
+  //   console.log(annotations);
+  // }
+
   render() {
     return (
       <div>

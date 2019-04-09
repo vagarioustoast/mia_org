@@ -4,18 +4,33 @@ import axios from "axios";
 
 export default class AdminContainer extends Component {
   state = {
-    users: []
+    users: [],
+    authors: []
   };
   async componentDidMount() {
-    const res = await axios(`http://localhost:3001/users/all`);
+    const res = await fetch(`http://localhost:3001/users/all`);
+    const resAuthors = await fetch(`http://localhost:3001/authors/all`);
     const users = await res.json();
+    const authors = await resAuthors.json();
     this.setState({
-      users: users
+      users: users,
+      authors: authors
     });
     console.log(users);
+    console.log(authors);
   }
+  // Add a Work
+  addWork = e => {
+    e.preventDefault();
+    axios.post("http://localhost:3001/users/", {
+      displayName: this.state.displayName,
+      email: this.state.email,
+      password: this.state.password
+    });
+  };
   render() {
     const { users } = this.state;
+    const { authors } = this.state;
     const userList = users.map(user => {
       return (
         <tr key={user._id}>
@@ -37,9 +52,18 @@ export default class AdminContainer extends Component {
         </tr>
       );
     });
+
+    const authorList = authors.map(author => {
+      return (
+        <option value={author.name} key={author._id}>
+          {author.name}
+        </option>
+      );
+    });
+
     return (
       <div>
-        <Admin userList={userList} />
+        <Admin userList={userList} authorList={authorList} />
       </div>
     );
   }

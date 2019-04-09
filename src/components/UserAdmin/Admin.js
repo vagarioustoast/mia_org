@@ -27,12 +27,7 @@ export default class Admin extends Component {
             <label htmlFor="name" className="f6 b db mb2">
               Author <span className="normal black-60">(Required)</span>
             </label>
-            <input
-              id="name"
-              className="input-reset ba b--black-20 pa2 mb2 db w-100"
-              type="text"
-              aria-describedby="name-desc"
-            />
+            <select>{this.props.authorList}</select>
             <small id="name-desc" className="f6 black-60 db mb2">
               e.g, "Walter Benjamin"
             </small>

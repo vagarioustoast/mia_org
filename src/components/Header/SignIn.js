@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Redirect } from "react-router";
 
 export default class SignIn extends Component {
   render() {
