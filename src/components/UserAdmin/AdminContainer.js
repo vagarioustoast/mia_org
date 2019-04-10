@@ -21,8 +21,7 @@ export default class AdminContainer extends Component {
   }
 
   render() {
-    const { users } = this.state;
-    const { authors } = this.state;
+    const { users, authors } = this.state;
     const userList = users.map(user => {
       return (
         <tr key={user._id}>

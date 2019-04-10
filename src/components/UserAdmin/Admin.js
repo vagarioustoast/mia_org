@@ -10,17 +10,36 @@ export default class Admin extends Component {
       [e.target.name]: e.target.value
     });
   };
+  // Add an Author
+  addAuthor = e => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/authors/create", {
+        name: this.state.name,
+        lifeSpan: this.state.lifeSpan,
+        authorPicUrl: this.state.authorPicUrl,
+        biography: this.state.biography
+      })
+      .then(res => {
+        console.log(res);
+      });
+  };
 
   // Add a Work
   addWork = e => {
     e.preventDefault();
-    axios.post("http://localhost:3001/articles/create", {
-      title: this.state.title,
-      author: this.state.author,
-      pubDate: this.state.pubDate,
-      content: this.state.content,
-      source: this.state.source
-    });
+    axios
+      .post("http://localhost:3001/articles/create", {
+        title: this.state.title,
+        author: this.state.author,
+        pubDate: this.state.pubDate,
+        content: this.state.content,
+        category: this.state.category,
+        source: this.state.source
+      })
+      .then(res => {
+        console.log(res);
+      });
   };
 
   render() {
@@ -94,13 +113,17 @@ export default class Admin extends Component {
               </label>
               <textarea
                 id="comment"
-                name="content"
+                name="biography"
                 className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
                 aria-describedby="comment-desc"
                 onChange={this.handleInput}
               />
             </div>
-            <a className="f6 link ba bw2 ph3 pv2 mb2 dib red" href="#0">
+            <a
+              className="f6 link ba bw2 ph3 pv2 mb2 dib red"
+              href="#0"
+              onClick={this.addAuthor}
+            >
               Submit
             </a>
           </form>
