@@ -4,20 +4,39 @@ import axios from "axios";
 
 export default class ArticleContainer extends Component {
   state = {
-    article: []
+    article: [],
+
+    annotations: []
   };
 
   componentDidMount() {
     axios.get(`http://localhost:3001${window.location.pathname}`).then(res => {
       this.setState({
-        article: res.data
+        article: res.data,
+        annotationId: res.data._id
       });
       console.log(res);
+      console.log(this.state.article[0]._id);
     });
+    this.callAnnotations();
   }
 
+  callAnnotations = e => {
+    axios
+      .get(
+        `http://localhost:3001/annotations/article/${this.state.article._id}`
+      )
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          annotationId: res.data
+        });
+      });
+  };
+
   render() {
-    const { article } = this.state;
+    const { article, annotations } = this.state;
+    const articleKey = article.map(article => article._id);
     const displayArticle = article.map(article => {
       return (
         <article className="athelas" key={article._id}>
@@ -56,6 +75,7 @@ export default class ArticleContainer extends Component {
                 }
                 className="br-100 h4 w4 dib"
                 title="Photo of a kitty staring at you"
+                alt={article.author.name}
               />
               <hr className="mw3 bb bw1 b--black-10" />
             </div>
@@ -63,28 +83,36 @@ export default class ArticleContainer extends Component {
               {article.author.biography}
             </p>
           </article>
-          {/* Annotations */}
-          <h1 className="red-80">Annotations</h1>
-          <article className="center mw5 mw6-ns hidden ba mv4">
-            <h1 className="f4 bg-near-black white mv0 pv2 ph3">
-              Title of card
-            </h1>
-            <div className="pa3 bt">
-              <p className="f6 f5-ns lh-copy measure mv0">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum.
-              </p>
-            </div>
-          </article>
+        </article>
+      );
+    });
+
+    /* Annotations */
+    const displayAnnotations = annotations.map(annotation => {
+      return (
+        <article
+          key={annotations._id}
+          className="center mw5 mw6-ns hidden ba mv4"
+        >
+          <h1 className="f4 bg-near-black white mv0 pv2 ph3">
+            {annotations.d}
+          </h1>
+          <div className="pa3 bt">
+            <p className="f6 f5-ns lh-copy measure mv0">
+              {annotations.content}
+            </p>
+          </div>
         </article>
       );
     });
 
     return (
       <div>
-        <Article displayArticle={displayArticle} />
+        <Article
+          displayArticle={displayArticle}
+          displayAnnotations={displayAnnotations}
+          articleKey={articleKey}
+        />
       </div>
     );
   }
