@@ -61,7 +61,10 @@ export default class FrontPage extends Component {
                   build this archive is to help in making it happen! :)
                 </h3>
                 <cite className="f6 ttu tracked fs-normal">
-                  <a href="https://www.marxists.org/admin/volunteers/volunteers.htm">
+                  <a
+                    className="white"
+                    href="https://www.marxists.org/admin/volunteers/volunteers.htm"
+                  >
                     Read more
                   </a>
                 </cite>
