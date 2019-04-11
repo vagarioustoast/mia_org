@@ -10,7 +10,8 @@ export default class ProfileContainer extends Component {
     const profileId = JSON.parse(localStorage.user);
     console.log(profileId._id);
     axios
-      .get(`http://localhost:3001/annotations/profile/${profileId}`)
+      // .get(`http://localhost:3001/annotations/profile/${profileId}`)
+      .get(`http://localhost:3001/annotations/all`)
       .then(res => {
         console.log(res.data);
         this.setState({
@@ -20,9 +21,14 @@ export default class ProfileContainer extends Component {
   }
 
   render() {
+    const user = this.props.user;
     const { annotations } = this.state;
-    const annotationsList = annotations
-      ? annotations.map(annotation => {
+    console.log(annotations);
+    const userAnnotations = annotations.filter(
+      annotation => annotation.user._id === user._id
+    );
+    const annotationsList = userAnnotations
+      ? userAnnotations.map(annotation => {
           return (
             <div key={annotation._id}>
               <div className="ba pa3">
