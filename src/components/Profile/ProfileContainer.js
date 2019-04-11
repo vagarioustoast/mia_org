@@ -21,9 +21,15 @@ export default class ProfileContainer extends Component {
     const { annotations } = this.state;
     const annotationsList = annotations.map(annotation => {
       return (
-        <p key={annotation._id}>
-          "{annotation.content}" -- <strong>{annotation.article.title}</strong>
-        </p>
+        <div key={annotation._id}>
+          <div className="ba pa3">
+            <p>
+              "{annotation.content}" --{" "}
+              <strong>{annotation.article.title}</strong>
+            </p>
+          </div>
+          <br />
+        </div>
       );
     });
     return (
