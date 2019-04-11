@@ -18,8 +18,9 @@ export default class FrontPage extends Component {
           </div>
         </div>
         {/* News Section */}
-        <h1>Around the World</h1>
+
         <section id="news" className="cf pa2-m">
+          <h1 className="white-90 baskerville f1 i">Around the World</h1>
           <News />
         </section>
         <section id="about">

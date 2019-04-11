@@ -7,7 +7,7 @@ export default class Header extends Component {
     return (
       <div>
         <header>
-          <div>
+          <div className="headline">
             <h1>
               <a
                 href="/"
@@ -16,87 +16,90 @@ export default class Header extends Component {
                 Marxist Internet Archive
               </a>
             </h1>
-            <a
-              href="/signin"
-              className="f7 f5-l link bg-animate black-80 dib ph2-l"
-            >
-              Sign in
-            </a>
-            <a
-              href="/logout"
-              className="f7 f5-l link bg-animate black-80 dib ph2-l"
-              onClick={this.props.handleLogOut}
-            >
-              Log Out
-            </a>
-            <a
-              href="/#about"
-              className="f7 f5-l link bg-animate black-80 dib ph2-l"
-            >
-              About
-            </a>
+
+            <div className="user-actions">
+              <a
+                href="/signin"
+                className="f7 f5-l link bg-animate black-80 dib ph2-l"
+              >
+                Sign in
+              </a>
+              <a
+                href="/logout"
+                className="f7 f5-l link bg-animate black-80 dib ph2-l"
+                onClick={this.props.handleLogOut}
+              >
+                Log Out
+              </a>
+              <a
+                href="/#about"
+                className="f7 f5-l link bg-animate black-80 dib ph2-l"
+              >
+                About
+              </a>
+            </div>
           </div>
 
-          <nav className="bt bb tc mw8 center mt2">
+          <nav className="bt bb tc mw12 center mt2">
             <a
               href="/articles/category/First International"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               First International
             </a>
 
             <a
               href="/articles/category/Western Marxism"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               Western Marxism
             </a>
 
             <a
               href="/articles/category/Trotskyists"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               Trotskyists
             </a>
 
             <a
               href="/articles/category/Left Communism"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               Left Communism
             </a>
 
             <a
               href="/articles/category/African Liberation"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               African Liberation
             </a>
 
             <a
               href="/articles/category/Black Liberation"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               Black Liberation
             </a>
 
             <a
               href="/articles/category/Feminists"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               Feminists
             </a>
 
             <a
               href="/articles/category/Philosophy"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               Philosophy
             </a>
 
             <a
               href="/articles/category/Ethics"
-              className="f6 f5-l link bg-animate black-80 dib pa2 ph4-l"
+              className="f6 f5-l link bg-animate black-80 dib pa2 ph3-l"
             >
               Ethics
             </a>
