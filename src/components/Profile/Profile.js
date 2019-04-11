@@ -14,9 +14,15 @@ export default class Profile extends Component {
     e.preventDefault();
     axios
       .put(`http://localhost:3001/users/update/${this.props.user._id}`, {
-        displayName: this.state.displayName,
-        avatarUrl: this.state.avatarUrl,
+        displayName: this.state.displayName
+          ? this.state.displayName
+          : this.props.user.displayName,
+        avatarUrl: this.state.avatarUrl
+          ? this.state.avatarUrl
+          : this.props.user.avatarUrl,
         description: this.state.description
+          ? this.state.description
+          : this.props.user.description
       })
       .then(res => {
         console.log(res);
@@ -26,6 +32,7 @@ export default class Profile extends Component {
     const user = this.props.user;
     return (
       <div className="measure center">
+        <h2>{user.displayName}</h2>
         <figure>
           <img
             src={
@@ -33,14 +40,14 @@ export default class Profile extends Component {
                 ? user.avatarUrl
                 : `https://pbs.twimg.com/media/CyjhJzHWQAkwG7e.png`
             }
-            className="h3 w3"
+            className="h5 w5"
             alt="user"
           />
         </figure>
         <h3>"{user.description}"</h3>
         {/* Edit Profile Information */}
-        <h4> Edit your Profile </h4>
         <form className="pa4 black-80">
+          <h4> Edit your Profile </h4>
           <label>
             <input
               name="displayName"
@@ -75,8 +82,7 @@ export default class Profile extends Component {
             Edit
           </button>
         </form>
-        <h2>{user.displayName}</h2>
-        <p>{user.description}</p>
+
         <div className="annotations">
           <h3 className="red">{user.displayName}'s Contributions</h3>
           {this.props.annotationsList}
