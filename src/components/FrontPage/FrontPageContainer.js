@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import FrontPage from "./FrontPage";
+import API_KEY from "../../config/keys";
 import axios from "axios";
 
 export default class FrontPageContainer extends Component {
   state = {
-    articles: []
+    articles: [],
+    outsideArticles: []
   };
 
   componentDidMount() {

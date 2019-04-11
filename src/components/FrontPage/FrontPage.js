@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import News from "./News";
 import "./FrontPage.css";
 
 export default class FrontPage extends Component {
@@ -20,8 +21,10 @@ export default class FrontPage extends Component {
             </div>
           </div>
         </div>
-        <section id="news" className="black">
-          <h1>News</h1>
+        {/* News Section */}
+        <h1>Around the World</h1>
+        <section id="news" className="cf w-100 pa2-ns">
+          <News />
         </section>
         <section id="about">
           <h1>About Section</h1>
