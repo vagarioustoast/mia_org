@@ -15,24 +15,8 @@ export default class ArticleContainer extends Component {
         article: res.data,
         annotationId: res.data._id
       });
-      console.log(res);
-      console.log(this.state.article[0]._id);
     });
-    this.callAnnotations();
   }
-
-  callAnnotations = e => {
-    axios
-      .get(
-        `http://localhost:3001/annotations/article/${this.state.article._id}`
-      )
-      .then(res => {
-        console.log(res.data);
-        this.setState({
-          annotationId: res.data
-        });
-      });
-  };
 
   render() {
     const { article, annotations } = this.state;
@@ -88,31 +72,10 @@ export default class ArticleContainer extends Component {
     });
 
     /* Annotations */
-    const displayAnnotations = annotations.map(annotation => {
-      return (
-        <article
-          key={annotations._id}
-          className="center mw5 mw6-ns hidden ba mv4"
-        >
-          <h1 className="f4 bg-near-black white mv0 pv2 ph3">
-            {annotations.d}
-          </h1>
-          <div className="pa3 bt">
-            <p className="f6 f5-ns lh-copy measure mv0">
-              {annotations.content}
-            </p>
-          </div>
-        </article>
-      );
-    });
 
     return (
       <div>
-        <Article
-          displayArticle={displayArticle}
-          displayAnnotations={displayAnnotations}
-          articleKey={articleKey}
-        />
+        <Article displayArticle={displayArticle} articleKey={articleKey} />
       </div>
     );
   }

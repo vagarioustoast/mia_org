@@ -28,7 +28,6 @@ class App extends Component {
           user: user
         })
       : this.setState({ loggedIn: false });
-    console.log(localStorage);
   }
   // Handle Form Input
   handleInput = e => {
