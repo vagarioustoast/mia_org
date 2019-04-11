@@ -4,9 +4,7 @@ import axios from "axios";
 
 export default class ArticleContainer extends Component {
   state = {
-    article: [],
-
-    annotations: []
+    article: []
   };
 
   componentDidMount() {
@@ -19,8 +17,8 @@ export default class ArticleContainer extends Component {
   }
 
   render() {
-    const { article, annotations } = this.state;
-    const articleKey = article.map(article => article._id);
+    const { article } = this.state;
+    const user = this.props.user;
     const displayArticle = article.map(article => {
       return (
         <article className="athelas" key={article._id}>
@@ -44,11 +42,10 @@ export default class ArticleContainer extends Component {
             </div>
           </div>
           <div className="georgia center measure-wide f4 f4-l pv5 lh-copy ph2">
-            {/* <h1 className="f1 lh-title">{article.title}</h1> */}
             {article.content}
           </div>
           <hr className="w-60" />
-          {/* Author */}
+          {/* Author Card */}
           <h1>About {article.author.name}</h1>
           <article className="mw8 center bg-black br3 pa3 pa4-ns mv3 ba b--black-10">
             <div className="tc">
@@ -71,11 +68,9 @@ export default class ArticleContainer extends Component {
       );
     });
 
-    /* Annotations */
-
     return (
       <div>
-        <Article displayArticle={displayArticle} articleKey={articleKey} />
+        <Article displayArticle={displayArticle} user={user} />
       </div>
     );
   }

@@ -43,7 +43,6 @@ export default class Admin extends Component {
   };
 
   render() {
-    const handleInput = this.props.handleInput;
     return (
       <div>
         {/* Author Submission */}
