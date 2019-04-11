@@ -10,8 +10,7 @@ export default class ArticleContainer extends Component {
   componentDidMount() {
     axios.get(`http://localhost:3001${window.location.pathname}`).then(res => {
       this.setState({
-        article: res.data,
-        annotationId: res.data._id
+        article: res.data
       });
     });
   }

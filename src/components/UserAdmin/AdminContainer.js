@@ -36,12 +36,14 @@ export default class AdminContainer extends Component {
             </a>
           </td>
           <td className="pv3 pr3 bb b--black-20">
-            <a
-              className="f6 link dim ph3 pv2 mb2 dib white bg-red"
-              href={`http://localhost:3001/users/${user._id}`}
+            <form
+              method="POST"
+              action={`http://localhost:3001/users/delete/${user._id}`}
             >
-              Delete
-            </a>
+              <button className="f6 link dim ph3 pv2 mb2 dib white bg-red">
+                Delete
+              </button>
+            </form>
           </td>
         </tr>
       );
