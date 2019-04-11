@@ -11,7 +11,6 @@ export default class FrontPageContainer extends Component {
 
   componentDidMount() {
     axios.get("http://localhost:3001/articles/all").then(res => {
-      console.log(res.data);
       this.setState({
         articles: res.data.slice(0, 3)
       });

@@ -19,7 +19,7 @@ export default class FrontPage extends Component {
         </div>
         {/* News Section */}
         <h1>Around the World</h1>
-        <section id="news" className="cf w-100 pa2-ns">
+        <section id="news" className="cf pa2-m">
           <News />
         </section>
         <section id="about">
@@ -32,7 +32,7 @@ export default class FrontPage extends Component {
             <div className="dtc v-mid">
               <h1 className="f1 f-headline-l fw5 i white">About the Archive</h1>
               <blockquote className="pa3 mh0 measure bg-black-40 f4 lh-copy center">
-                <h3 className="f5 georgia fw1 lh-title">
+                <h3 className="f5 fw1 lh-title">
                   We have built these archives from the ground up through the
                   hard work of volunteers around the world. All our volunteers
                   work in more or less complete autonomy, held together by our
@@ -40,7 +40,7 @@ export default class FrontPage extends Component {
                   Volunteers come into the project to do work on what they like
                   — there is no top down or centralized planning structure — so
                   if we don't have something in these archives, it is because no
-                  one has volunteered to contribute it! :) If there is a certain
+                  one has volunteered to contribute it! If there is a certain
                   author or work you're looking for that we do not have,
                   volunteer to put that information that is important to you on
                   the internet so it can be shared with others! The volunteers
@@ -48,7 +48,7 @@ export default class FrontPage extends Component {
                   the world — from Indonesia to Greece, from the US to the
                   United Arab Emirates.
                 </h3>{" "}
-                <h3 className="f5 georgia fw1 lh-title">
+                <h3 className="f5 fw1 lh-title">
                   The political practices of MIA volunteers are as diverse as
                   our different backgrounds, age, and race. Most of us are not
                   professors, teachers, students or otherwise involved with
@@ -58,7 +58,7 @@ export default class FrontPage extends Component {
                   friends. The MIA has been built simply by workers who give a
                   few minutes of labour at the end of the day — Keep this in
                   mind when you write to us with a suggestion — the best way to
-                  build this archive is to help in making it happen! :)
+                  build this archive is to help in making it happen!
                 </h3>
                 <cite className="f6 ttu tracked fs-normal">
                   <a
