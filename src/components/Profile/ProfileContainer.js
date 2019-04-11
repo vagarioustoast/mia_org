@@ -7,14 +7,11 @@ export default class ProfileContainer extends Component {
     annotations: []
   };
   componentDidMount() {
-    axios
-      // .get(`http://localhost:3001/annotations/profile/${profileId}`)
-      .get(`http://localhost:3001/annotations/all`)
-      .then(res => {
-        this.setState({
-          annotations: res.data
-        });
+    axios.get(`http://localhost:3001/annotations/all`).then(res => {
+      this.setState({
+        annotations: res.data
       });
+    });
   }
 
   render() {

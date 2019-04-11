@@ -32,7 +32,9 @@ export default class News extends Component {
             />
           </div>
           <a href={article.url} className="ph2 ph0-ns pb3 link db">
-            <h3 className="f5 f4-ns mb0 black-90">{article.title}</h3>
+            <h3 className="f5 f4-ns mb0 black-90 underline-hover">
+              {article.title}
+            </h3>
             <h3 className="f6 f5 fw3 mt2 black-60">
               {article.description.slice(0, 150)}...
             </h3>
