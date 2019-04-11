@@ -24,11 +24,11 @@ export default class ArticleContainer extends Component {
           <div
             className="vh-100 dt w-100 tc bg-dark-gray white cover"
             style={{
-              background: `url(http://mrmrs.github.io/photos/u/009.jpg), no-repeat, center`
+              background: `url(https://cdn.pixabay.com/photo/2013/06/08/00/41/black-swan-122983_1280.jpg), no-repeat, center`
             }}
           >
             <div className="dtc v-mid">
-              <h1 className="f1 f-headline-l fw1 i white-60">
+              <h1 className="f1 f-headline-l fw1 i white shadow-5">
                 {article.title}
               </h1>
               <blockquote className="ph0 mh0 measure f4 lh-copy center">
