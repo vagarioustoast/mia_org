@@ -16,8 +16,6 @@ export default class AdminContainer extends Component {
       users: users,
       authors: authors
     });
-    console.log(users);
-    console.log(authors);
   }
 
   render() {

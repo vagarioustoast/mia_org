@@ -2,6 +2,26 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class Profile extends Component {
+  state = {};
+  // Handle Form Input
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  editProfile = e => {
+    e.preventDefault();
+    axios
+      .put(`http://localhost:3001/users/update/${this.props.user._id}`, {
+        displayName: this.state.displayName,
+        avatarUrl: this.state.avatarUrl,
+        description: this.state.description
+      })
+      .then(res => {
+        console.log(res);
+      });
+  };
   render() {
     const user = this.props.user;
     return (
@@ -9,43 +29,48 @@ export default class Profile extends Component {
         <figure>
           <img
             src={
-              user.avatarUrl ||
-              `https://pbs.twimg.com/media/CyjhJzHWQAkwG7e.png`
+              user.avatarUrl
+                ? user.avatarUrl
+                : `https://pbs.twimg.com/media/CyjhJzHWQAkwG7e.png`
             }
             className="h3 w3"
             alt="user"
           />
         </figure>
+        <h3>"{user.description}"</h3>
         {/* Edit Profile Information */}
         <h4> Edit your Profile </h4>
-        <form
-          className="pa4 black-80"
-          method="POST"
-          action={`http://localhost:3001/users/update/${user._id}`}
-        >
+        <form className="pa4 black-80">
           <label>
             <input
-              className="input-reset ba b--black-20 pa2 mb2 db w-100"
+              name="displayName"
+              className="input-reset ba b--black pa2 mb2 db w-100"
               placeholder={user.displayName}
+              onChange={this.handleInput}
             />
           </label>
           <label>
             <input
-              className="input-reset ba b--black-20 pa2 mb2 db w-100"
-              placeholder={user.avatarUrl ? user.avatarUrl : "Avatar url"}
+              name="avatarUrl"
+              className="input-reset ba b--black pa2 mb2 db w-100"
+              placeholder="New Avatar url"
+              onChange={this.handleInput}
             />
           </label>
           <label>
             <textarea
-              className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
+              name="description"
+              className="db border-box hover-black w-100 measure ba b--black pa2 br2 mb2"
               placeholder={
                 user.description ? user.description : "Describe yourself"
               }
+              onChange={this.handleInput}
             />
           </label>
           <button
             className="f6 link dim ph3 pv2 mb2 dib white bg-black"
             href="#0"
+            onClick={this.editProfile}
           >
             Edit
           </button>
