@@ -7,13 +7,10 @@ export default class ProfileContainer extends Component {
     annotations: []
   };
   componentDidMount() {
-    const profileId = JSON.parse(localStorage.user);
-    console.log(profileId._id);
     axios
       // .get(`http://localhost:3001/annotations/profile/${profileId}`)
       .get(`http://localhost:3001/annotations/all`)
       .then(res => {
-        console.log(res.data);
         this.setState({
           annotations: res.data
         });
@@ -23,7 +20,6 @@ export default class ProfileContainer extends Component {
   render() {
     const user = this.props.user;
     const { annotations } = this.state;
-    console.log(annotations);
     const userAnnotations = annotations.filter(
       annotation => annotation.user._id === user._id
     );
