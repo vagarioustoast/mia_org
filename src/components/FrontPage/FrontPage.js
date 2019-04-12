@@ -24,11 +24,11 @@ export default class FrontPage extends Component {
                   >
                     <div className="tc">
                       <img
-                        src="https://i2.wp.com/metro.co.uk/wp-content/uploads/2018/05/515448562.jpg?quality=90&strip=all&zoom=1&resize=540%2C684&ssl=1"
+                        src="https://ih0.redbubble.net/image.450732259.6063/flat,550x550,075,f.jpg"
                         className="br-100 h5 w5 dib ba b--black-05 pa2"
                         alt=""
                       />
-                      <h1 className="f3 white mb2">Marx Welcomes You!</h1>
+                      <h1 className="f3 white i mb2">Welcome!</h1>
                     </div>
                   </article>
                 </div>
