@@ -8,7 +8,7 @@ export default class News extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=marxism, marxist&language=en&sortBy=publishedAt&excludeDomains=infowars.com, americanthinker.com&apiKey=885e5c30d2c94efb907449c42ed70b10`
+        `https://newsapi.org/v2/everything?q=marxism, ethics&language=en&sortBy=publishedAt&excludeDomains=infowars.com, americanthinker.com&apiKey=885e5c30d2c94efb907449c42ed70b10`
       )
       .then(res => {
         this.setState({
