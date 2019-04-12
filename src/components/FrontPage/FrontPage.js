@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import News from "./News";
+import "./FrontPage.css";
 
 export default class FrontPage extends Component {
   render() {
@@ -9,9 +10,27 @@ export default class FrontPage extends Component {
           <div>
             <div className="mw9 center ph3-ns">
               <div className="cf ph2-ns">
-                <div className="fl w-100 w-100-ns center">
-                  {/* Article */}
-                  {this.props.articlesList}
+                <div className="fl w-100 w-60-ns pa2 center">
+                  <div className="fl w-100 w-100-ns center">
+                    {/* Article */}
+                    <h1 className="i">Most Popular</h1>
+                    {this.props.articlesList}
+                  </div>
+                </div>
+                <div className="fl w-100 w-40-ns center pa2">
+                  <article
+                    id="marx-image"
+                    className="mw6 center bg-black br3 pa3 pa4-ns mv3 ba b--black-10"
+                  >
+                    <div className="tc">
+                      <img
+                        src="https://i2.wp.com/metro.co.uk/wp-content/uploads/2018/05/515448562.jpg?quality=90&strip=all&zoom=1&resize=540%2C684&ssl=1"
+                        className="br-100 h5 w5 dib ba b--black-05 pa2"
+                        alt=""
+                      />
+                      <h1 className="f3 white mb2">Marx Welcomes You!</h1>
+                    </div>
+                  </article>
                 </div>
               </div>
             </div>
@@ -20,7 +39,9 @@ export default class FrontPage extends Component {
         {/* News Section */}
 
         <section id="news" className="cf pa2-m">
-          <h1 className="black-90 baskerville f1 i">Around the World</h1>
+          <h1 className="black-90 baskerville f1 i w-80 tc center pa3 ba white bg-black">
+            Around the World
+          </h1>
           <News />
         </section>
         <section id="about">

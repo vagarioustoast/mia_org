@@ -12,7 +12,7 @@ export default class FrontPageContainer extends Component {
   componentDidMount() {
     axios.get("http://localhost:3001/articles/all").then(res => {
       this.setState({
-        articles: res.data.slice(0, 3)
+        articles: res.data.slice(0, 2)
       });
     });
   }
